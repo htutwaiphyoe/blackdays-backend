@@ -8,4 +8,6 @@ const router = express.Router();
 
 router.route("/").get(eventController.getEvents).post(eventController.createEvent);
 
+router.route("/:id").get(eventController.getEvent);
+
 module.exports = router;

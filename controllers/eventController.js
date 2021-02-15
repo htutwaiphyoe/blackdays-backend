@@ -1,23 +1,9 @@
 // own modules
 const Event = require("../models/Event");
-const { catchError } = require("../utils/utils");
+const controllerFactory = require("../utils/controllerFactory");
 
-exports.getEvents = catchError(async (req, res, next) => {
-    res.json({
-        status: "success",
-        data: {
-            message: "Hello, world",
-        },
-    });
-});
+exports.getEvents = controllerFactory.getAll(Event);
 
-exports.createEvent = catchError(async (req, res, next) => {
-    const event = await Event.create(req.body);
+exports.getEvent = controllerFactory.getOne(Event);
 
-    res.status(201).json({
-        status: "success",
-        data: {
-            data: event,
-        },
-    });
-});
+exports.createEvent = controllerFactory.createOne(Event);

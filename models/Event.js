@@ -2,15 +2,15 @@
 const mongoose = require("mongoose");
 
 const eventSchema = new mongoose.Schema({
-    title: {
+    description: {
         type: String,
         trim: true,
-        required: [true, "Title is required"],
-        maxlength: [100, "title must be at most 100 characters"],
+        required: [true, "Description is required"],
+        maxlength: [100, "Description must be at most 100 characters"],
     },
-    time: {
+    date: {
         type: Date,
-        required: [true, "Time is required"],
+        required: [true, "Date is required"],
     },
     summary: {
         type: String,
