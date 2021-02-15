@@ -4,8 +4,7 @@
     "description": "History of Burma 1221",
     "main": "app.js",
     "scripts": {
-        "start": "nodemon server.js",
-        "prod": "node server.js"
+        "start": "node server.js"
     },
     "author": "Htut Wai Phyoe",
     "license": "ISC",
