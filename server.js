@@ -23,16 +23,14 @@ mongoose.connect(db, {
     useFindAndModify: false,
 });
 
-if (process.env.NODE_ENV === "development") {
-    mongoose.connection.on("connected", () => {
-        console.log("Database connection established");
-    });
-}
+// if (process.env.NODE_ENV === "development") {
+//     mongoose.connection.on("connected", () => {
+//         console.log("Database connection established");
+//     });
+// }
 const port = process.env.PORT || 5000;
 
-const server = app.listen(port, () => {
-    console.log("Server listening on port " + port);
-});
+const server = app.listen(port);
 
 process.on("unhandledRejection", () => {
     server.close(() => {
